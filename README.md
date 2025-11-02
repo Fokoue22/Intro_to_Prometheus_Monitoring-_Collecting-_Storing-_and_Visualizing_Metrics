@@ -5,10 +5,10 @@ To demonstrate how Prometheus can monitor system performance, collect metrics, a
 ![Alt text](images/prometheus-architecture.png)
 
 By the end of the project, you’ll:
-    - Set up a full Prometheus monitoring stack.
-    - Monitor your system (or containerized app).
-    - Visualize data on Grafana dashboards.
-    - Configure alerts with Alertmanager.
+   - Set up a full Prometheus monitoring stack.
+   - Monitor your system (or containerized app).
+   - Visualize data on Grafana dashboards.
+   - Configure alerts with Alertmanager.
 
 🏗️ 1. System Architecture Overview
 
