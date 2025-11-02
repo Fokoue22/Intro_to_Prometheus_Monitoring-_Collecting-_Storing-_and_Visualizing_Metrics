@@ -36,14 +36,7 @@ So the workflow is:
 
 Dashboard shows a problem → Alert is triggered → You check logs → You fix the root cause.
 
-### Main components and description:
 
-1. Prometheus Server: Core component that scrapes metrics and stores them in a time-series database.
-2. Exporters: Small agents that expose metrics (e.g., node_exporter for system metrics, app-specific exporters).
-3. Pushgateway: Receives metrics from short-lived jobs that can’t be scraped directly.
-4. Service Discovery: Automatically finds what to monitor (e.g., Kubernetes, EC2 instances).
-5. Alertmanager: Handles alerts (e.g., send email, Slack, PagerDuty).
-6. Grafana: Visualization dashboard for Prometheus metrics.
 
 ## 🧩 2. What is Prometheus?
 
@@ -57,5 +50,16 @@ Dashboard shows a problem → Alert is triggered → You check logs → You fix 
 - `Powerful query language (PromQL)`: This language allow you to manipulate, query, to retrieve and analyze `time series data` that are store on the Prometheus server.
 - `Alerting and AlertManager`: Here you can set alerting (e.g., “If CPU usage reache a threshold of 80% you want to be alert for it, send an alert maybe on cell phone, email, slack or whatever.”). Easy integration with Grafana
 - `Scalability`: Prometheus is designed to scale you can add instance when the workload becomes heavy. 
-- Time-series database (TSDB) built-in.
 - Easy integration with Grafana.
+
+
+### Main components and description:
+
+1. `Prometheus Server`: `Core component` that scrapes metrics and stores them in a time-series database. It's responsible for colleting and storing querying the metrics. It periodically check for metrics data then store it localy and it available for you to query.
+2. `Exporters`: It's and agents that you install on the target system (EC2 instance) that is responsible of exposing the metrics (e.g., node_exporter for system metrics, app-specific exporters).
+3. `Prometheus Alertmanager`: Alertmanager is the one that handle alerts. So you need to install this to send you notification (e.g., send email, Slack, PagerDuty)
+4. `Prometheus Web UI`: When you setup a server this Prometheus UI will give you a UI, which makes it easy for you to visualize and query it. So, It's just a basic web-based interface that allow you to run those PromQL queries on the UI don't need to do that from the CLI. 
+5. `Data Storage`: Prometheus have it on `Time-series database (TSDB) built-in(already set up)` where it store the collected metrics in the form of `key-value pair`. This storage is optimized for high volume so don't have to wory about latency and all those.
+6. Pushgateway: Receives metrics from short-lived jobs that can’t be scraped directly.
+7. Service Discovery: Automatically finds what to monitor (e.g., Kubernetes, EC2 instances).
+8. Grafana: Visualization dashboard for Prometheus metrics.
