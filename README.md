@@ -10,9 +10,17 @@ By the end of the project, you’ll:
    - Visualize data on Grafana dashboards.
    - Configure alerts with Alertmanager.
 
-🏗️ 1. System Architecture Overview
+## 🏗️ 1. System Architecture Overview
 
-Main components and description:
+### Monitoring key components and description:
+1. Metrics: Monitirung is all about collecting and gathering matrics. Metrics re numeric data about system/app performance (e.g., CPU utilization, memory usage, request count). So matrics basically provide data on the performance of your system
+2. Exporters: Small agents that expose metrics (e.g., node_exporter for system metrics, app-specific exporters).
+3. Pushgateway: Receives metrics from short-lived jobs that can’t be scraped directly.
+4. Service Discovery: Automatically finds what to monitor (e.g., Kubernetes, EC2 instances).
+5. Alertmanager: Handles alerts (e.g., send email, Slack, PagerDuty).
+6. 
+
+### Main components and description:
 
 1. Prometheus Server: Core component that scrapes metrics and stores them in a time-series database.
 2. Exporters: Small agents that expose metrics (e.g., node_exporter for system metrics, app-specific exporters).
