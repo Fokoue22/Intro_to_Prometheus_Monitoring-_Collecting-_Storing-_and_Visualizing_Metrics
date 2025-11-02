@@ -18,10 +18,12 @@ By the end of the project, you’ll:
     * Help debug errors or performance problems.
     * Provide a history of events (what happened and when).
     * Show the context of issues that metrics alone can’t reveal.
-3. Pushgateway: Receives metrics from short-lived jobs that can’t be scraped directly.
-4. Service Discovery: Automatically finds what to monitor (e.g., Kubernetes, EC2 instances).
-5. Alertmanager: Handles alerts (e.g., send email, Slack, PagerDuty).
-6. 
+3. `Alerts`: It's how you notify your user when a threshold is met. Alerts are `automated notifications` triggered when metrics or conditions meet certain rules. (e.g., “If CPU usage > 80% for more than 2 minutes, send an alert.”).
+    * They help detect problems early before they become outages.
+    * Notify you when something is wrong (high latency, low memory, failed service, etc.).
+    * Enable proactive monitoring — respond before users notice issues.
+4. 
+ 
 
 ### Main components and description:
 
