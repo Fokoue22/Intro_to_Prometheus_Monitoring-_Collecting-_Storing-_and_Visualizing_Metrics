@@ -45,14 +45,15 @@ Dashboard shows a problem → Alert is triggered → You check logs → You fix 
 5. Alertmanager: Handles alerts (e.g., send email, Slack, PagerDuty).
 6. Grafana: Visualization dashboard for Prometheus metrics.
 
-🧩 1. What is Prometheus?
+## 🧩 2. What is Prometheus?
 
-Prometheus is an open-source monitoring and alerting toolkit originally built by SoundCloud.
-It’s widely used in DevOps, Kubernetes, and Cloud environments to collect and query metrics.
+`Prometheus` is an open-source monitoring and alerting tool originally built by `SoundCloud`. 
+   * It’s widely used in DevOps, Kubernetes, and Cloud environments to collect and query metrics.
+   * What makes it different is that it collects and stores its metrics as tme series data. i.e. metrics information is stored with the timestamp at which it was recorded, alongside optional `key-value pairs`(because metrics you have alot of data so it makes it flexibility to access that data with programming language like `Python or Java`) called labels
 
-Key Features:
-
-- Pull-based metrics collection model.
-- Powerful query language (PromQL).
+### Key Features:
+- `Multi-dimensional Data Model`: Prometheus is flexible because it store it data as a `key-value pairs`. So users have the possibility to associate `labels` to the data that they get and make it easy to analyse the data. 
+- `Data Scraping:` Here, Prometheus will ask EC2 (e.g., what is the CPU) at this time then collect the data called matrics and send them back. SO prometheus will be like a `server` and the target system will be the `client`. 
+- `Powerful query language (PromQL):`
 - Time-series database (TSDB) built-in.
 - Easy integration with Grafana and Alertmanager.
