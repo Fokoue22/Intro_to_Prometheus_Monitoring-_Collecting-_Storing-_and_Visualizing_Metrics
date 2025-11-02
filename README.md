@@ -53,7 +53,9 @@ Dashboard shows a problem → Alert is triggered → You check logs → You fix 
 
 ### Key Features:
 - `Multi-dimensional Data Model`: Prometheus is flexible because it store it data as a `key-value pairs`. So users have the possibility to associate `labels` to the data that they get and make it easy to analyse the data. 
-- `Data Scraping:` Here, Prometheus will ask EC2 (e.g., what is the CPU) at this time then collect the data called matrics and send them back. SO prometheus will be like a `server` and the target system will be the `client`. 
-- `Powerful query language (PromQL):`
+- `Data Scraping`: Here, Prometheus will ask EC2 (e.g., what is the CPU) at this time then collect the data called matrics and send them back. SO prometheus will be like a `server` and the target system will be the `client`. 
+- `Powerful query language (PromQL)`: This language allow you to manipulate, query, to retrieve and analyze `time series data` that are store on the Prometheus server.
+- `Alerting and AlertManager`: Here you can set alerting (e.g., “If CPU usage reache a threshold of 80% you want to be alert for it, send an alert maybe on cell phone, email, slack or whatever.”). Easy integration with Grafana
+- `Scalability`: Prometheus is designed to scale you can add instance when the workload becomes heavy. 
 - Time-series database (TSDB) built-in.
-- Easy integration with Grafana and Alertmanager.
+- Easy integration with Grafana.
