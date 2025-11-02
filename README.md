@@ -13,8 +13,11 @@ By the end of the project, you’ll:
 ## 🏗️ 1. System Architecture Overview
 
 ### Monitoring key components and description:
-1. Metrics: Monitirung is all about collecting and gathering matrics. Metrics re numeric data about system/app performance (e.g., CPU utilization, memory usage, request count). So matrics basically provide data on the performance of your system
-2. Exporters: Small agents that expose metrics (e.g., node_exporter for system metrics, app-specific exporters).
+1. `Metrics:` Monitoring is all about collecting and gathering matrics. Metrics are numeric data about system/app performance (e.g., CPU utilization, memory usage, request count). `So matrics basically provide data on the performance of your system`
+2. `log`: Are detailed records of events that happen inside your system, application, or infrastructure. (e.g., Like in serverless computing we check the logs with CloudWatch log). Every time a server, container, or app performs an action, it can write a line to a log file.
+    * Help debug errors or performance problems.
+    * Provide a history of events (what happened and when).
+    * Show the context of issues that metrics alone can’t reveal.
 3. Pushgateway: Receives metrics from short-lived jobs that can’t be scraped directly.
 4. Service Discovery: Automatically finds what to monitor (e.g., Kubernetes, EC2 instances).
 5. Alertmanager: Handles alerts (e.g., send email, Slack, PagerDuty).
