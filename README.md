@@ -5,12 +5,21 @@ To demonstrate how Prometheus can monitor system performance, collect metrics, a
 ![Alt text](images/prometheus-architecture.png)
 
 By the end of the project, you’ll:
-  - Set up a full Prometheus monitoring stack.
-  - Monitor your system (or containerized app).
-  - Visualize data on Grafana dashboards.
-  - Configure alerts with Alertmanager.
+    - Set up a full Prometheus monitoring stack.
+    - Monitor your system (or containerized app).
+    - Visualize data on Grafana dashboards.
+    - Configure alerts with Alertmanager.
 
+🏗️ 1. System Architecture Overview
 
+Main components and description:
+
+1. Prometheus Server: Core component that scrapes metrics and stores them in a time-series database.
+2. Exporters: Small agents that expose metrics (e.g., node_exporter for system metrics, app-specific exporters).
+3. Pushgateway: Receives metrics from short-lived jobs that can’t be scraped directly.
+4. Service Discovery: Automatically finds what to monitor (e.g., Kubernetes, EC2 instances).
+5. Alertmanager: Handles alerts (e.g., send email, Slack, PagerDuty).
+6. Grafana: Visualization dashboard for Prometheus metrics.
 
 🧩 1. What is Prometheus?
 
