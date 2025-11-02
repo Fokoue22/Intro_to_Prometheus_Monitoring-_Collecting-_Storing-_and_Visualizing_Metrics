@@ -10,3 +10,16 @@ By the end of the project, you’ll:
   - Visualize data on Grafana dashboards.
   - Configure alerts with Alertmanager.
 
+
+
+🧩 1. What is Prometheus?
+
+Prometheus is an open-source monitoring and alerting toolkit originally built by SoundCloud.
+It’s widely used in DevOps, Kubernetes, and Cloud environments to collect and query metrics.
+
+Key Features:
+
+- Pull-based metrics collection model.
+- Powerful query language (PromQL).
+- Time-series database (TSDB) built-in.
+- Easy integration with Grafana and Alertmanager.
