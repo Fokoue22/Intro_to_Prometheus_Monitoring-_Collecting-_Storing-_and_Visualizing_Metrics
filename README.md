@@ -163,8 +163,13 @@ ls -l
 ```
 ![Alt text](images/run-prometheus.png)
 
-2. To be able to see the web url go to port `9090` by default using your `public ip address of your ubuntu server`
+2. To be able to see the web url go to port `9090` by default using your `public ip address of your ubuntu server`.
 ```
 3.93.61.153:9090
 ```
 ![Alt text](images/website-donot-work.png)
+
+3. But the prometheus don't show on our website. This is because we did not allow port `9090` on our `security group`\
+![Alt text](images/updated-SG-inbound.png)
+
+4. let go back to our website and refreh
