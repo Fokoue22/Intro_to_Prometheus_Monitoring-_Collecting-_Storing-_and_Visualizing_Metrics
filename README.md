@@ -150,4 +150,11 @@ mv prometheus-3.5.0.linux-amd64 prometheus
 ```
 ls -l
 ```
+10. let call the binary file `prometheus` found inside our prometheus unzip file and check if prometheus is install 
+```
+./prometheus --version
+```
 ![Alt text](images/prometheus-unzip-file.png)
+
+### Step 2 — Prometheus Server Installation.
+1. 
