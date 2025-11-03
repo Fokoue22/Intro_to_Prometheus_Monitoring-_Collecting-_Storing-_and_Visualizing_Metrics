@@ -122,3 +122,12 @@ wget https://github.com/prometheus/prometheus/releases/download/v3.5.0/prometheu
 ls -l
 ```
 ![Alt text](images/install-prometheus.png)
+
+7. We will still create another folder called `prometheus-server` just because we want our work to be organized. 
+```
+mkdir prometheus-server
+```
+```
+cd prometheus-server
+```
+8. Now let `unzip` it
