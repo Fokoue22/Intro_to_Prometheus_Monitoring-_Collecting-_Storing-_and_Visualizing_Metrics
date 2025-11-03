@@ -125,9 +125,18 @@ ls -l
 
 7. We will still create another folder called `prometheus-server` just because we want our work to be organized. 
 ```
+cd ..
+```
+```
 mkdir prometheus-server
 ```
 ```
 cd prometheus-server
 ```
-8. Now let `unzip` it
+8. Now let `unzip` it. We can first use the command help to see which command to use. `x = extract`, `f = the file you will like to extract`, `v = verbel in case of error message wil let you know` `z = for zip file`
+```
+tar --help
+```
+```
+tar -xfvz ~/downloads/prometheus-3.5.0.linux-amd64.tar.gz
+```
