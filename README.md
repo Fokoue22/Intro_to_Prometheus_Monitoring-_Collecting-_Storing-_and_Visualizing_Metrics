@@ -118,3 +118,7 @@ cd downloads
 ```
 wget https://github.com/prometheus/prometheus/releases/download/v3.5.0/prometheus-3.5.0.linux-amd64.tar.gz
 ```
+```
+ls -l
+```
+![Alt text](images/install-prometheus.png)
