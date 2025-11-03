@@ -82,3 +82,27 @@ Dashboard shows a problem → Alert is triggered → You check logs → You fix 
 1. Launched 2 ubuntu server: (Prometheuse-ubuntu-server and target-host)
 
 ![Alt text](images/prometheus-ubuntu-ec2.png)
+
+
+2. Take up you privilage on your Prometheuse-ubuntu-server. 
+```
+sudo su - ubuntu
+```
+3. let rename our ubuntu server to "prometheuse-server". You can as well use the other command 
+```
+sudo hostname prometheuse-server
+```
+```
+sudo hostnamectl set-hostname prometheuse-server
+```
+- For the command to take effect you need to exit(with the command bellow) and login again(with the fist command above)
+```
+exit
+```
+- let verifie if python3 and ansible is install 
+```
+ python3 --version
+```
+```
+ ansible --version
+```
