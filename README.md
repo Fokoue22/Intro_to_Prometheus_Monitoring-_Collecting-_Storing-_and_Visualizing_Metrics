@@ -145,8 +145,9 @@ ls -l
 ```
 9. Let rename our download prometheus `prometheus-3.5.0.linux-amd64.tar.gz` into a simple name called `prometheus`
 ```
-mv prometheus-3.5.0.linux-amd64.tar.gz prometheus
+mv prometheus-3.5.0.linux-amd64 prometheus
 ```
 ```
 ls -l
 ```
+![Alt text](images/prometheus-unzip-file.png)
