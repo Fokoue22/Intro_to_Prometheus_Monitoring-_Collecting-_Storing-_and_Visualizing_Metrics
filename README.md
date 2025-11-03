@@ -63,3 +63,20 @@ Dashboard shows a problem → Alert is triggered → You check logs → You fix 
 6. Pushgateway: Receives metrics from short-lived jobs that can’t be scraped directly.
 7. Service Discovery: Automatically finds what to monitor (e.g., Kubernetes, EC2 instances).
 8. Grafana: Visualization dashboard for Prometheus metrics.
+
+#### Main differences between Prometheus vs AWS CloudWatch
+Open-source monitoring & alerting toolkit
+CREATING A TABLE
+
+|Feature |              Prometheus          |          AWS CloudWatch       |
+| --     | -------------------------------- | ----------------------------- |
+| Type   |Open-source monitoring & alerting toolkit |Managed monitoring service by AWS |
+| Metric Storage   |Uses local Time Series Database (TSDB) |Uses AWS-managed storage (no control over internal storage) |
+
+
+
+## 🪜 3. Project Setup Steps
+### Step 1 — Prometheus Server Installation. 
+1. Launched 2 ubuntu server:
+
+![Alt text](images/prometheus-architecture.png)
