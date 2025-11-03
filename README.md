@@ -156,5 +156,14 @@ ls -l
 ```
 ![Alt text](images/prometheus-unzip-file.png)
 
-### Step 2 — Prometheus Server Installation.
-1. 
+### Step 2 — Run Prometheus Server.
+1. To run the prometheus server just tap the command below 
+```
+./prometheus
+```
+![Alt text](images/run-prometheus.png)
+
+2. To be able to see the web url go to port `9090` by default using your `public ip address of your ubuntu server`
+```
+3.93.61.153:9090
+```
