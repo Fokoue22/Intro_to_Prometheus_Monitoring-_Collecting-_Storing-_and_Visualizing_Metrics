@@ -88,21 +88,33 @@ Dashboard shows a problem → Alert is triggered → You check logs → You fix 
 ```
 sudo su - ubuntu
 ```
-3. let rename our ubuntu server to "prometheuse-server". You can as well use the other command 
+3. let rename our ubuntu server to "prometheuse". You can as well use the other command 
 ```
-sudo hostname prometheuse-server
+sudo hostname prometheuse
 ```
 ```
-sudo hostnamectl set-hostname prometheuse-server
+sudo hostnamectl set-hostname prometheuse
 ```
-- For the command to take effect you need to exit(with the command bellow) and login again(with the fist command above)
+4. For the command to take effect you need to exit(with the command bellow) and login again(with the fist command above)
 ```
 exit
 ```
-- let verifie if python3 and ansible is install 
 ```
- python3 --version
+sudo su - ubuntu
+```
+5. Now, let connect as a sudo (the root user) with the command below 
+```
+ sudo -i
+```
+6. We need to go to the officail documentation [this page](https://prometheus.io/download/) we copy the link on `Linux OS`. 
+- Before that we need to create a folder called `downloads` then you cd into it
+```
+mkdir downloads
 ```
 ```
- ansible --version
+cd downloads
+```
+- You use the command below to download prometheus in that folder just created
+```
+wget https://github.com/prometheus/prometheus/releases/download/v3.5.0/prometheus-3.5.0.linux-amd64.tar.gz
 ```
