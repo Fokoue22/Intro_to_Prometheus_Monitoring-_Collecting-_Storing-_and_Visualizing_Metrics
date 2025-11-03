@@ -79,6 +79,6 @@ Dashboard shows a problem → Alert is triggered → You check logs → You fix 
 
 ## 🪜 3. Project Setup Steps
 ### Step 1 — Prometheus Server Installation. 
-1. Launched 2 ubuntu server:
+1. Launched 2 ubuntu server: (Prometheuse-ubuntu-server and target-host)
 
-![Alt text](images/prometheus-architecture.png)
+![Alt text](images/prometheus-ubuntu-ec2.png)
