@@ -65,13 +65,15 @@ Dashboard shows a problem → Alert is triggered → You check logs → You fix 
 8. Grafana: Visualization dashboard for Prometheus metrics.
 
 #### Main differences between Prometheus vs AWS CloudWatch
-Open-source monitoring & alerting toolkit
-CREATING A TABLE
 
 |Feature |              Prometheus          |          AWS CloudWatch       |
 | --     | -------------------------------- | ----------------------------- |
 | Type   |Open-source monitoring & alerting toolkit |Managed monitoring service by AWS |
 | Metric Storage   |Uses local Time Series Database (TSDB) |Uses AWS-managed storage (no control over internal storage) |
+| Query Language   |PromQL (Prometheus Query Language) — very flexible |CloudWatch Metric Math — less powerful and flexible |
+| Deployment   |You install and manage it yourself (e.g., on EC2, Kubernetes, or Docker) |Fully managed by AWS — no installation needed |
+| Alerting System   |Alertmanager — powerful and customizable |CloudWatch Alarms — simpler, managed alerts |
+| Cost   |Free (open-source) but you pay for infrastructure |Pay-per-use (based on metrics, logs, and API calls) |
 
 
 
