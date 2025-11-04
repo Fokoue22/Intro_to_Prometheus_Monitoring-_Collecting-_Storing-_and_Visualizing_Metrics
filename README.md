@@ -295,14 +295,10 @@ ls -l
 ```
 Public IPv4 address:9100
 ```
-![Alt text](images/website-donot-work.png)
+![Alt text](images/node-exporter-website.png)
 
 
 
-4. let go back to our website and refreh
-![Alt text](images/website-okay.png)
-
-Listening on" address=[::]:9100
 
 
 ## Author
