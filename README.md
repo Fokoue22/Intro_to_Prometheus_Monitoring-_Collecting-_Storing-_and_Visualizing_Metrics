@@ -324,7 +324,7 @@ cat prometheus.yml
 ```
  ps -ef | grep prometheus
 ```
-![Alt text](images/Prometheus-on-the-bacground.png)
+![Alt text](images/kill-the-Prometheus.png)
 
 ## Author
 FOKOUE THOMAS
