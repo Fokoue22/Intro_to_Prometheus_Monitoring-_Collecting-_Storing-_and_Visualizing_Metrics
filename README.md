@@ -182,10 +182,6 @@ The `Prometheus configuration file (named prometheus.yml)` is a yaml file that d
 ```
 cat prometheus.yml
 ```
-```
- vi authorized_keys
-```
-#### When you run the vi command above first thing to do is to press the "i" for insert. After deleting and pasting the pub-key you press the botton "Esc" ":wq!"
 
 ### Run Prometheus in the background 
 To fix the issue of every time we exit the server goes down, we can run the Prometheus process in the background. If you run that Prometheus server in the background, It means if we leave the Linux page Prometheus server will still be running. That is just more efficient way of having it  
@@ -291,13 +287,21 @@ ls -l
 12. Node-exporter run by default on port `9100` So will need to update our `security group Inbound Rule ` agian. 
 ![Alt text](images/updated-SG-node-exporter.png)
 
-2. To be able to see the web url go to port `9100` by default using your `public ip address of your target-host ubuntu server`.
+13. To be able to see the web url go to port `9100` by default using your `public ip address of your target-host ubuntu server`.
 ```
 Public IPv4 address:9100
 ```
 ![Alt text](images/node-exporter-website.png)
 
-
+### We setup the Node Exporter but he's not yet link with our Prometheus Server. 
+- So, we need to be in our Prometheus Server and go to our `Prometheus configuration file (prometheus.yml)` and create a new job called `node_exporter` our target on `scrape_configs` right at the bottom.
+```
+vi prometheus.yml
+```
+```
+cat prometheus.yml
+```
+#### When you run the vi command above first thing to do is to press the "i" for insert. After deleting and pasting the pub-key you press the botton "Esc" ":wq!"
 
 
 
