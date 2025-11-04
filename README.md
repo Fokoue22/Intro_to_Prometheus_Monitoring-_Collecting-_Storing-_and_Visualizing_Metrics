@@ -178,3 +178,11 @@ ls -l
 
 ### What Is the Prometheus Config File?
 The `Prometheus configuration file (named prometheus.yml)` is a yaml file that describe how you will like to collect and process your metrics. Can also be defined as the main configuration file that tells Prometheus what to monitor, how to scrape data, and where to send alerts. 
+- let cat into our config file 
+```
+cat prometheus.yml
+```
+```
+ vi authorized_keys
+```
+#### When you run the vi command above first thing to do is to press the "i" for insert. After deleting and pasting the pub-key you press the botton "Esc" ":wq!"
