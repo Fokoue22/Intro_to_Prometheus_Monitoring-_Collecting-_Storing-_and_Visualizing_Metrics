@@ -254,27 +254,24 @@ ls -l
 ```
 ![Alt text](images/download-node-exporter.png)
 
-6. We will still create another folder called `prometheus-server` just because we want our work to be organized. 
+6. We will still create another folder called `node-exporters` just because we want our work to be organized. 
 ```
 cd ..
 ```
 ```
-mkdir prometheus-server
+mkdir node-exporters
 ```
 ```
-cd prometheus-server
+cd node-exporters
 ```
 7. Now let `unzip` it. We can first use the command help to see which command to use. `x = extract`, `f = the file you will like to extract`, `v = verbel in case of error message wil let you know` `z = for zip file`
 ```
-tar --help
-```
-```
-tar -xvzf ~/downloads/prometheus-3.5.0.linux-amd64.tar.gz
+tar -xvzf ~/downloads/node_exporter-1.10.2.linux-amd64.tar.gz
 ```
 ```
 ls -l
 ```
-9. Let rename our download prometheus `prometheus-3.5.0.linux-amd64.tar.gz` into a simple name called `prometheus`
+9. Let rename our download prometheus `node_exporter-1.10.2.linux-amd64.tar.gz` into a simple name called `node-exporter`
 ```
 mv prometheus-3.5.0.linux-amd64 prometheus
 ```
