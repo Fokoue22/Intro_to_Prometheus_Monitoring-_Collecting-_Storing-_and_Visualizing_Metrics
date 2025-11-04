@@ -247,12 +247,12 @@ cd downloads
 ```
 - You use the command below to download prometheus in that folder just created
 ```
-wget https://github.com/prometheus/prometheus/releases/download/v3.5.0/prometheus-3.5.0.linux-amd64.tar.gz
+wget https://github.com/prometheus/node_exporter/releases/download/v1.10.2/node_exporter-1.10.2.linux-amd64.tar.gz
 ```
 ```
 ls -l
 ```
-![Alt text](images/install-prometheus.png)
+![Alt text](images/download-node-exporter.png)
 
 6. We will still create another folder called `prometheus-server` just because we want our work to be organized. 
 ```
