@@ -186,3 +186,25 @@ cat prometheus.yml
  vi authorized_keys
 ```
 #### When you run the vi command above first thing to do is to press the "i" for insert. After deleting and pasting the pub-key you press the botton "Esc" ":wq!"
+
+### Run Prometheus in the background 
+To fix the issue of every time we exit the server goes down, we can run the Prometheus process in the background. If you run that Prometheus server in the background, It means if we leave the Linux page Prometheus server will still be running. That is just more efficient way of having it  
+- let check the process first. the ommand below will give you all the process that are runing on linux. 
+```
+ ps
+```
+- Check Prometheus before
+```
+ ps -ef | grep prometheus
+```
+- RUN PROMETHEUS IN THE BACKGROUND. `nohup` will help you run Prometheus on the bacground and if something failed generate the log in that location 
+```
+ nohup ./prometheus > prometheus.log 2>&1 &
+```
+```
+ ps -ef | grep prometheus
+```
+- CHECK status after
+```
+ ps -ef | grep prometheus
+```
