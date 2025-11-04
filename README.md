@@ -206,3 +206,90 @@ To fix the issue of every time we exit the server goes down, we can run the Prom
  ps -ef | grep prometheus
 ```
 ![Alt text](images/Prometheus-on-the-bacground.png)
+
+ 
+### Node Exporters?
+`Exporters`: It's and `agents` that you install on the target system (EC2 instance) that is responsible of exposing the metrics (e.g., node_exporter for system metrics, app-specific exporters).
+
+So you need to install `node exporters` on the `target-host` it could be on `ubuntu, linux, Red Hat or whatever ec2 instance` for him to be able to expose the metrics.
+
+#### Does Ansible require and Agent to work??? No, because Ansible is agentless but Prometheus is not agentless because he need the Node Exporters agent to be install on the machine. 
+
+1. Take up you privilage on your target-host. 
+```
+sudo su - ubuntu
+```
+2. let rename our ubuntu server to "prometheuse". You can as well use the other command 
+```
+sudo hostname target-host
+```
+```
+sudo hostnamectl set-hostname target-host
+```
+3. For the command to take effect you need to exit(with the command bellow) and login again(with the fist command above)
+```
+exit
+```
+```
+sudo su - ubuntu
+```
+4. Now, let connect as a sudo (the root user) with the command below 
+```
+ sudo -i
+```
+5. We need to go to the officail documentation [this page](https://prometheus.io/download/) we copy the link on `Linux OS`. 
+- Before that we need to create a folder called `downloads` then you cd into it
+```
+mkdir downloads
+```
+```
+cd downloads
+```
+- You use the command below to download prometheus in that folder just created
+```
+wget https://github.com/prometheus/prometheus/releases/download/v3.5.0/prometheus-3.5.0.linux-amd64.tar.gz
+```
+```
+ls -l
+```
+![Alt text](images/install-prometheus.png)
+
+6. We will still create another folder called `prometheus-server` just because we want our work to be organized. 
+```
+cd ..
+```
+```
+mkdir prometheus-server
+```
+```
+cd prometheus-server
+```
+7. Now let `unzip` it. We can first use the command help to see which command to use. `x = extract`, `f = the file you will like to extract`, `v = verbel in case of error message wil let you know` `z = for zip file`
+```
+tar --help
+```
+```
+tar -xvzf ~/downloads/prometheus-3.5.0.linux-amd64.tar.gz
+```
+```
+ls -l
+```
+9. Let rename our download prometheus `prometheus-3.5.0.linux-amd64.tar.gz` into a simple name called `prometheus`
+```
+mv prometheus-3.5.0.linux-amd64 prometheus
+```
+```
+ls -l
+```
+10. let call the binary file `prometheus` found inside our prometheus unzip file and check if prometheus is install 
+```
+./prometheus --version
+```
+![Alt text](images/prometheus-unzip-file.png)
+
+### Step 2 — Run Prometheus Server.
+1. To run the prometheus server just tap the command below 
+```
+./prometheus
+```
+![Alt text](images/run-prometheus.png)
