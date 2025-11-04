@@ -304,6 +304,27 @@ cat prometheus.yml
 #### When you run the vi command above first thing to do is to press the "i" for insert. After deleting and pasting the pub-key you press the botton "Esc" ":wq!"
 ![Alt text](images/connect-prometheus&node-exporter.png)
 
+### We need to kill the Prometheus Server and restart the process because it keep seeing one job. 
+- Check Prometheus before
+```
+ ps -ef | grep prometheus
+```
+- Use the command below to kill the Prometheus Server
+```
+ kill -9 1349
+```
+```
+ ps -ef | grep prometheus
+```
+- Let RUN PROMETHEUS IN THE BACKGROUND again 
+```
+ nohup ./prometheus > prometheus.log 2>&1 &
+```
+- CHECK status after
+```
+ ps -ef | grep prometheus
+```
+![Alt text](images/Prometheus-on-the-bacground.png)
 
 ## Author
 FOKOUE THOMAS
