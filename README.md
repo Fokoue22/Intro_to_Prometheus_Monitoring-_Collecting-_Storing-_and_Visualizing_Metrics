@@ -201,10 +201,8 @@ To fix the issue of every time we exit the server goes down, we can run the Prom
 ```
  nohup ./prometheus > prometheus.log 2>&1 &
 ```
-```
- ps -ef | grep prometheus
-```
 - CHECK status after
 ```
  ps -ef | grep prometheus
 ```
+![Alt text](images/Prometheus-on-the-bacground.png)
