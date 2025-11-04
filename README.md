@@ -302,7 +302,7 @@ vi prometheus.yml
 cat prometheus.yml
 ```
 #### When you run the vi command above first thing to do is to press the "i" for insert. After deleting and pasting the pub-key you press the botton "Esc" ":wq!"
-
+![Alt text](images/connect-prometheus&node-exporter.png)
 
 
 ## Author
