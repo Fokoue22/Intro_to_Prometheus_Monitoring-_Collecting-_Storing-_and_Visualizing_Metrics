@@ -287,3 +287,23 @@ ls -l
 ./node_exporter
 ```
 ![Alt text](images/Run-node-exporter.png)
+
+12. Node-exporter run by default on port `9100` So will need to update our `security group Inbound Rule ` agian. 
+![Alt text](images/updated-SG-node-exporter.png)
+
+2. To be able to see the web url go to port `9100` by default using your `public ip address of your ubuntu server`.
+```
+3.93.61.153:9090
+```
+![Alt text](images/website-donot-work.png)
+
+
+
+4. let go back to our website and refreh
+![Alt text](images/website-okay.png)
+
+Listening on" address=[::]:9100
+
+
+## Author
+FOKOUE THOMAS
