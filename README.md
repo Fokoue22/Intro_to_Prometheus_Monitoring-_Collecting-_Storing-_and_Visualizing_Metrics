@@ -302,6 +302,7 @@ vi prometheus.yml
 cat prometheus.yml
 ```
 #### When you run the vi command above first thing to do is to press the "i" for insert. After deleting and pasting the pub-key you press the botton "Esc" ":wq!"
+#### NB: Make sure to update the port `9100`
 ![Alt text](images/connect-prometheus&node-exporter.png)
 
 ### We need to kill the Prometheus Server and restart the process because it keep seeing one job. 
@@ -325,6 +326,7 @@ cat prometheus.yml
  ps -ef | grep prometheus
 ```
 ![Alt text](images/kill-the-Prometheus.png)
+![Alt text](images/new-job-node-exporter.png)
 
 ## Author
 FOKOUE THOMAS
