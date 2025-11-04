@@ -271,22 +271,22 @@ tar -xvzf ~/downloads/node_exporter-1.10.2.linux-amd64.tar.gz
 ```
 ls -l
 ```
-9. Let rename our download prometheus `node_exporter-1.10.2.linux-amd64` into a simple name called `node-exporter`
+9. Let rename our download prometheus `node_exporter-1.10.2.linux-amd64` into a simple name called `node_exporter`
 ```
-mv node_exporter-1.10.2.linux-amd64 node-exporter
+mv node_exporter-1.10.2.linux-amd64 node_exporter
 ```
 ```
 ls -l
 ```
 10. let call the binary file `node-exporter` found inside our prometheus unzip file and check if node-exporter is install 
 ```
-./node-exporter --version
+./node_exporter --version
 ```
 ![Alt text](images/prometheus-unzip-file.png)
 
-### Step 2 — Run Prometheus Server.
+### Step 2 — Run node-exporter Binary.
 1. To run the prometheus server just tap the command below 
 ```
-./prometheus
+./node_exporter
 ```
 ![Alt text](images/run-prometheus.png)
