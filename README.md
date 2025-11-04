@@ -271,16 +271,16 @@ tar -xvzf ~/downloads/node_exporter-1.10.2.linux-amd64.tar.gz
 ```
 ls -l
 ```
-9. Let rename our download prometheus `node_exporter-1.10.2.linux-amd64.tar.gz` into a simple name called `node-exporter`
+9. Let rename our download prometheus `node_exporter-1.10.2.linux-amd64` into a simple name called `node-exporter`
 ```
-mv prometheus-3.5.0.linux-amd64 prometheus
+mv node_exporter-1.10.2.linux-amd64 node-exporter
 ```
 ```
 ls -l
 ```
-10. let call the binary file `prometheus` found inside our prometheus unzip file and check if prometheus is install 
+10. let call the binary file `node-exporter` found inside our prometheus unzip file and check if node-exporter is install 
 ```
-./prometheus --version
+./node-exporter --version
 ```
 ![Alt text](images/prometheus-unzip-file.png)
 
