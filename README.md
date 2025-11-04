@@ -328,5 +328,13 @@ cat prometheus.yml
 ![Alt text](images/kill-the-Prometheus.png)
 ![Alt text](images/new-job-node-exporter.png)
 
+### Now the `target host or system` is exposing all his matrics for the `prometheus server` to monitor it. So, when something happend you will just get the metrics and start visualising it from the prometheus server you can check all the metrics that are available. 
+- Like the metrics below to check the cpu 
+```
+ node_cpu_seconds_total
+```
+
+### You can also install `Alertmanager` on a separete EC2 and link that with `prometheus server` using the Prometheus configuration file (prometheus.yml) and many more 
+
 ## Author
 FOKOUE THOMAS
