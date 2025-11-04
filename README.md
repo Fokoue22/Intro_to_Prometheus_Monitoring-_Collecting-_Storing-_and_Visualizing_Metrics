@@ -282,11 +282,8 @@ ls -l
 ```
 ./node_exporter --version
 ```
-![Alt text](images/prometheus-unzip-file.png)
-
-### Step 2 — Run node-exporter Binary.
-1. To run the prometheus server just tap the command below 
+11. Run node-exporter Binary with the command below 
 ```
 ./node_exporter
 ```
-![Alt text](images/run-prometheus.png)
+![Alt text](images/Run-node-exporter.png)
