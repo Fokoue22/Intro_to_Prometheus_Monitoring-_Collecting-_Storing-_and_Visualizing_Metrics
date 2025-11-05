@@ -439,7 +439,8 @@ Username: admin
 Password: admin
 ```
 You’ll be asked to create a new password — so do that.
-![Alt text](images/node-exporter-website.png)
+![Alt text](images/grafana-login.png)
+![Alt text](images/grafana-dashboard.png)
 
 ### You can also install `Alertmanager` on a separete EC2 and link that with `prometheus server` using the Prometheus configuration file (prometheus.yml) and many more 
 
