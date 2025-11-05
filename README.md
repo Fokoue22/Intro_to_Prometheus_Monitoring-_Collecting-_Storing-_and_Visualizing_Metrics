@@ -394,11 +394,13 @@ sudo su - ubuntu
  sudo mkdir -p /etc/apt/keyrings/
  curl -fsSL https://packages.grafana.com/gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/grafana.gpg
 ```
-3. Update & install:
+3. Update the list of available packages:
 ```
  sudo apt-get update
+```
+4. Install Grafana OSS:
+```
  sudo apt-get install grafana -y
-
 ```
 
 
