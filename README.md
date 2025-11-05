@@ -363,6 +363,31 @@ cat prometheus.yml
  node_cpu_seconds_total
 ```
 
+### Install Grafana Official Repository. Complete the following steps to install Grafana from the APT repository:
+1. Take up you privilage on your target-host. 
+```
+sudo su - ubuntu
+```
+2. let rename our ubuntu server to "prometheuse". You can as well use the other command 
+```
+sudo hostname grafana
+```
+3. For the command to take effect you need to exit(with the command bellow) and login again(with the fist command above)
+```
+exit
+```
+```
+sudo su - ubuntu
+```
+4. Now, let connect as a sudo (the root user) with the command below 
+```
+ sudo -i
+```
+5. We need to go to the officail documentation [this page](https://grafana.com/docs/grafana/latest/setup-grafana/installation/debian/) to Install Grafana on Debian or Ubuntu
+- Before that we need to create a folder called `downloads` then you cd into it
+
+
+
 ### You can also install `Alertmanager` on a separete EC2 and link that with `prometheus server` using the Prometheus configuration file (prometheus.yml) and many more 
 
 ## Author
