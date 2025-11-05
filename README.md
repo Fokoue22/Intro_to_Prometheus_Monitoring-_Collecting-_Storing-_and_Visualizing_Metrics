@@ -148,6 +148,9 @@ ls -l
 mv prometheus-3.5.0.linux-amd64 prometheus
 ```
 ```
+cd prometheus
+```
+```
 ls -l
 ```
 10. let call the binary file `prometheus` found inside our prometheus unzip file and check if prometheus is install 
