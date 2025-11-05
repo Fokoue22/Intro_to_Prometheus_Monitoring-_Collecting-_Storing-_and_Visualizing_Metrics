@@ -317,6 +317,17 @@ cd prometheus
 vi prometheus.yml
 ```
 ```
+- job_name: "node_exporter"
+    # metrics_path defaults to '/metrics'
+    # scheme defaults to 'http'.
+
+    static_configs:
+      - targets: ["54.80.56.141:9100"]
+       # The label name is added as a label `label_name=<label_value>` to any timeseries scraped from this config.
+        labels:
+          app: "prometheus"
+```
+```
 cat prometheus.yml
 ```
 #### When you run the vi command above first thing to do is to press the "i" for insert. After deleting and pasting the pub-key you press the botton "Esc" ":wq!"
