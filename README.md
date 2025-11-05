@@ -302,6 +302,18 @@ Public IPv4 address:9100
 ### We setup the Node Exporter but he's not yet link with our Prometheus Server. 
 - So, we need to be in our Prometheus Server and go to our `Prometheus configuration file (prometheus.yml)` and create a new job called `node_exporter` our target on `scrape_configs` right at the bottom.
 ```
+sudo su - ubuntu
+```
+```
+sudo su - ubuntu
+```
+```
+sudo su - ubuntu
+```
+```
+sudo su - ubuntu
+```
+```
 vi prometheus.yml
 ```
 ```
