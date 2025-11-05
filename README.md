@@ -427,6 +427,14 @@ sudo su - ubuntu
 ```
 ![Alt text](images/install-grafana.png)
 
+### Secure Grafana (Optional but Important)
+- For production:
+```
+ sudo ufw allow 3000/tcp
+ sudo ufw allow 9090/tcp
+ sudo ufw enable
+```
+
 ### Open Grafana Port (3000)
 1. Go to your AWS EC2 Management Console → `Security Groups` →
 Edit Inbound rules and add: default on port `3000` 
