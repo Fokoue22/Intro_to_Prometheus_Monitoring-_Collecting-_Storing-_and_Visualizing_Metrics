@@ -363,7 +363,8 @@ cat prometheus.yml
  node_cpu_seconds_total
 ```
 
-### Install Grafana Official Repository. Complete the following steps to install Grafana from the APT repository:
+## Install Grafana Official Repository. 
+### Complete the following steps to install Grafana from the APT repository:
 1. Take up you privilage on your target-host. 
 ```
 sudo su - ubuntu
@@ -404,14 +405,27 @@ sudo su - ubuntu
 ```
 ![Alt text](images/install-grafana.png)
 
-
-
-12. Node-exporter run by default on port `9100` So will need to update our `security group Inbound Rule ` agian. 
+### Start and Enable Grafana Service
+1. Start Grafana:
+```
+ sudo systemctl start grafana-server
+```
+2. Enable it to run on boot:
+```
+ sudo systemctl start grafana-server
+```
+3. Check status:
+```
+ sudo systemctl status grafana-server
+```
+### Open Grafana Port (3000)
+1. Go to your AWS EC2 Management Console → `Security Groups` →
+Edit Inbound rules and add: default on port `3000` 
 ![Alt text](images/updated-SG-node-exporter.png)
 
-13. To be able to see the web url go to port `9100` by default using your `public ip address of your target-host ubuntu server`.
+2. To be able to see the web url go to port `3000` by default using your `public ip address of your grafana ubuntu server`.
 ```
-Public IPv4 address:9100
+Public IPv4 address:3000
 ```
 ![Alt text](images/node-exporter-website.png)
 
