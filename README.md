@@ -402,8 +402,7 @@ sudo su - ubuntu
 ```
  sudo apt-get install grafana -y
 ```
-
-
+![Alt text](images)
 
 ### You can also install `Alertmanager` on a separete EC2 and link that with `prometheus server` using the Prometheus configuration file (prometheus.yml) and many more 
 
