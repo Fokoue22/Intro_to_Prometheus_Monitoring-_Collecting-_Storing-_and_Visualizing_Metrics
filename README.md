@@ -279,6 +279,9 @@ ls -l
 ```
 10. let call the binary file `node-exporter` found inside our prometheus unzip file and check if node-exporter is install 
 ```
+cd node_exporter
+```
+```
 ./node_exporter --version
 ```
 11. Run node-exporter Binary with the command below 
