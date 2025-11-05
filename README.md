@@ -387,23 +387,26 @@ sudo su - ubuntu
 5. We need to go to the officail documentation [this page](https://grafana.com/docs/grafana/latest/setup-grafana/installation/debian/) to Install Grafana on Debian or Ubuntu
 1. Install the prerequisite packages:
 ```
- sudo apt-get install -y software-properties-common
- sudo add-apt-repository "deb https://packages.grafana.com/oss/deb stable main"
+ sudo apt-get install -y apt-transport-https software-properties-common wget
 ```
 2. Add Grafana’s GPG key:
 ```
  sudo mkdir -p /etc/apt/keyrings/
- curl -fsSL https://packages.grafana.com/gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/grafana.gpg
+ wget -q -O - https://apt.grafana.com/gpg.key | gpg --dearmor | sudo tee /etc/apt/keyrings/grafana.gpg > /dev/null
 ```
-3. Update the list of available packages:
+3. Add a repository for stable releases, run the following command:
+```
+ echo "deb [signed-by=/etc/apt/keyrings/grafana.gpg] https://apt.grafana.com stable main" | sudo tee -a /etc/apt/sources.list.d/grafana.list 
+```
+4. Update the list of available packages:
 ```
  sudo apt-get update
 ```
-4. Install Grafana OSS:
+5. Install Grafana OSS:
 ```
  sudo apt-get install grafana -y
 ```
-5. Check Grafana package installation
+6. Check Grafana package installation
 ```
  grafana-server -v
 ```
