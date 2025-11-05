@@ -427,7 +427,7 @@ sudo su - ubuntu
 ### Open Grafana Port (3000)
 1. Go to your AWS EC2 Management Console → `Security Groups` →
 Edit Inbound rules and add: default on port `3000` 
-![Alt text](images/updated-SG-node-exporter.png)
+![Alt text](images/updated-SG-grafana.png)
 
 2. To be able to see the web url go to port `3000` by default using your `public ip address of your grafana ubuntu server`.
 ```
