@@ -403,6 +403,10 @@ sudo su - ubuntu
 ```
  sudo apt-get install grafana -y
 ```
+5. Check Grafana package installation
+```
+ grafana-server -v
+```
 ![Alt text](images/install-grafana.png)
 
 ### Start and Enable Grafana Service
