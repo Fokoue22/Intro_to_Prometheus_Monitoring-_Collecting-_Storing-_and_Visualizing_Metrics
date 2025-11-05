@@ -305,13 +305,13 @@ Public IPv4 address:9100
 sudo su - ubuntu
 ```
 ```
-sudo su - ubuntu
+sudo -i
 ```
 ```
-sudo su - ubuntu
+cd prometheus-server
 ```
 ```
-sudo su - ubuntu
+cd prometheus
 ```
 ```
 vi prometheus.yml
