@@ -441,9 +441,24 @@ Public IPv4 address:3000
 Username: admin
 Password: admin
 ```
-You’ll be asked to create a new password — so do that.
+You’ll be asked to create a new password — so do that or skip
 ![Alt text](images/grafana-login.png)
 ![Alt text](images/grafana-dashboard.png)
+
+
+### Link Grafana to Prometheus. 
+Once you’re in Grafana’s dashboard:
+1. Click on → `Data Sources`
+2. Click Add data source
+3. Choose `Prometheus`
+4. In the “HTTP” section, add the URL of your working prometheus server
+```
+http://<your-prometheus-server-ip>:9090
+```
+If Prometheus is working on the same EC2 instance as grafana use this one:
+```
+http://localhost:9090
+```
 
 ### You can also install `Alertmanager` on a separete EC2 and link that with `prometheus server` using the Prometheus configuration file (prometheus.yml) and many more 
 
