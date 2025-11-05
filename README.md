@@ -244,7 +244,7 @@ mkdir downloads
 ```
 cd downloads
 ```
-- You use the command below to download prometheus in that folder just created
+- You use the command below to download prometheus `node exporters` in that folder just created
 ```
 wget https://github.com/prometheus/node_exporter/releases/download/v1.10.2/node_exporter-1.10.2.linux-amd64.tar.gz
 ```
