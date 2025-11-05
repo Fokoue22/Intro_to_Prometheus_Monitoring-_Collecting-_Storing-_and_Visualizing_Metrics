@@ -459,6 +459,8 @@ If Prometheus is working on the same EC2 instance as grafana use this one:
 ```
 http://localhost:9090
 ```
+5. Scroll down click Save & Test
+![Alt text](images/Link-Grafana-to-Prometheus.png)
 
 ### You can also install `Alertmanager` on a separete EC2 and link that with `prometheus server` using the Prometheus configuration file (prometheus.yml) and many more 
 
