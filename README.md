@@ -416,12 +416,14 @@ sudo su - ubuntu
 ```
 2. Enable it to run on boot:
 ```
- sudo systemctl start grafana-server
+ sudo systemctl enable grafana-server
 ```
 3. Check status:
 ```
  sudo systemctl status grafana-server
 ```
+![Alt text](images/install-grafana.png)
+
 ### Open Grafana Port (3000)
 1. Go to your AWS EC2 Management Console → `Security Groups` →
 Edit Inbound rules and add: default on port `3000` 
