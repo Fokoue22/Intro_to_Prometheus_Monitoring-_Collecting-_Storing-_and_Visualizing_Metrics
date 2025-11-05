@@ -466,15 +466,14 @@ http://localhost:9090
 1. First click on `Dashboard` at your left 
 2. Then click the `+ create dashboard`
 3. Click Add new panel
-3. Select Prometheus as the data source
-4. Type a query like:
+4. Select Prometheus as the data source
+5. Type a query on `Metric` like:
 ```
 node_cpu_seconds_total
 ```
-```
-rate(node_cpu_seconds_total{mode="system"}[5m])
-```
-
+6. Click Run query
+7. Save the dashboard.
+![Alt text](images/create-first-dashboard-grafana.png)
 
 ### You can also install `Alertmanager` on a separete EC2 and link that with `prometheus server` using the Prometheus configuration file (prometheus.yml) and many more 
 
