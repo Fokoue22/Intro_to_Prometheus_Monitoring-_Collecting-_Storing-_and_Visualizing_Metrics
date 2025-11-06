@@ -479,6 +479,9 @@ http://localhost:9090
 ```
 node_cpu_seconds_total
 ```
+```
+node_cpu_seconds_total
+```
 6. Click Run query
 7. Save the dashboard.
 ![Alt text](images/create-first-dashboard-grafana.png)
