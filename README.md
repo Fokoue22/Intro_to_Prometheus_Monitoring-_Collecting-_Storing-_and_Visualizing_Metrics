@@ -12,7 +12,7 @@ By the end of the project, you’ll:
 
 ## 🏗️ 1. System Architecture Overview
 ### Definition of Monitoring
-Monitoring
+Monitoring is the process of collecting, analyzing, and using data from systems, applications, and infrastructure to understand their performance, health, and availability in real time.
 
 
 ### Monitoring key components and description:
