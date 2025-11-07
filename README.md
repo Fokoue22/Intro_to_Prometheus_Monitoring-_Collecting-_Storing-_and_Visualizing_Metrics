@@ -12,9 +12,9 @@ By the end of the project, you’ll:
 
 ## 🏗️ 1. System Architecture Overview
 ### Definition of Monitoring
+Monitoring
 
 
-Is there any failure happening right now?
 ### Monitoring key components and description:
 1. `Metrics:` Monitoring is all about collecting and gathering matrics. Metrics are numeric data about system/app performance (e.g., CPU utilization, memory usage, request count). `So matrics basically provide data on the performance of your system`
 2. `log`: Are detailed `records of events` that happen inside your system, application, or infrastructure. (e.g., Like in serverless computing we check the logs with CloudWatch log). Every time a server, container, or app performs an action, it can write a line to a log file.
