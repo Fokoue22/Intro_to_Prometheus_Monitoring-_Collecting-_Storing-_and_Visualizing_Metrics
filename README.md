@@ -17,6 +17,7 @@ Monitoring is the process of collecting, analyzing, and using data from systems,
 It helps you answer questions like:
    * Is my application running smoothly?
    * Are my servers overloaded?
+   * Is there any failure happening right now?
 
 
 ### Monitoring key components and description:
