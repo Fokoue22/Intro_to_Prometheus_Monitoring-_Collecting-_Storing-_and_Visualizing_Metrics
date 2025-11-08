@@ -626,7 +626,25 @@ Public IPv4 address:9093
 ```
 ![Alt text](images/alertmanager-dashboard.png)
 
-
+### Run Alertmanager in the background 
+To fix the issue of every time we exit the server goes down, we can run the Prometheus process in the background.   
+- let check the process first. the command below will give you all the process that are runing on linux. 
+```
+ ps
+```
+- Check Alertmanager before
+```
+ ps -ef | grep alertmanager
+```
+- RUN ALETMANAGER IN THE BACKGROUND. `nohup` will help you run Alertmanager on the bacground and if something failed generate the log in that location 
+```
+ nohup ./alertmanager > alertmanager.log 2>&1 &
+```
+- CHECK status after
+```
+ ps -ef | grep alertmanager
+```
+![Alt text](images/Prometheus-on-the-bacground.png)
 
 
 
