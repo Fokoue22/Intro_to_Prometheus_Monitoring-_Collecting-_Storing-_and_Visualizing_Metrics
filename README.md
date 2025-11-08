@@ -592,14 +592,14 @@ cd alert-manager
 ```
 7. Now let `unzip` it. We can first use the command help to see which command to use. `x = extract`, `f = the file you will like to extract`, `v = verbel in case of error message wil let you know` `z = for zip file`
 ```
-tar -xvzf ~/downloads/node_exporter-1.10.2.linux-amd64.tar.gz
+tar -xvzf ~/downloads/alertmanager-0.29.0.linux-amd64.tar.gz
 ```
 ```
 ls -l
 ```
 9. Let rename our download prometheus `node_exporter-1.10.2.linux-amd64` into a simple name called `alert_manager`
 ```
-mv alertmanager-0.29.0.linux-amd64.tar.gz alert_manager
+mv alertmanager-0.29.0.linux-amd64 alert_manager
 ```
 ```
 ls -l
@@ -609,16 +609,16 @@ ls -l
 cd alert_manager
 ```
 ```
-./alert_manager --version
+./alertmanager --version
 ```
 11. Run node-exporter Binary with the command below 
 ```
-./alert_manager
+./alertmanager
 ```
-![Alt text](images/Run-node-exporter.png)
+![Alt text](images/run-alertmanager.png)
 
-12. Node-exporter run by default on port `9100` So will need to update our `security group Inbound Rule ` agian. 
-![Alt text](images/updated-SG-node-exporter.png)
+12. Node-exporter run by default on port `9093` So will need to update our `security group Inbound Rule ` agian. 
+![Alt text](images/updated-SG-alertmanger..png)
 
 13. To be able to see the web url go to port `9100` by default using your `public ip address of your target-host ubuntu server`.
 ```
