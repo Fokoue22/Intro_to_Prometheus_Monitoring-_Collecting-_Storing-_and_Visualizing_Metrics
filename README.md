@@ -685,6 +685,8 @@ cd prometheus
 ```
 vi prometheus.yml
 ```
+- Motified or add this section under `alerting`:
+- Also modified the `rule_file` with `alert.rules.yml`. 
 ```
 alerting:
   alertmanagers:
@@ -694,12 +696,18 @@ alerting:
 
 ```
 ```
+rule_files:
+  - "alert.rules.yml"
+
+```
+```
 cat prometheus.yml
 ```
-#### When you run the vi command above first thing to do is to press the "i" for insert. After deleting and pasting the pub-key you press the botton "Esc" ":wq!"
-#### NB: Make sure to update the port `9100`
 
-![Alt text](images/connect-prometheus&node-exporter.png)
+![Alt text](images/connect-prometheus&alertmanager.png)
+
+- Then create alert.rules.yml and add a simple alert rule
+
 
 ### We need to kill the Prometheus Server and restart the process because it keep seeing one job. 
 - Check Prometheus before
