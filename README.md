@@ -656,17 +656,36 @@ global:
   resolve_timeout: 5m
 
 route:
-  receiver: 'email-alert'
+  group_by: ['alertname']
+  group_wait: 30s
+  group_interval: 5m
+  repeat_interval: 1h
+  receiver: 'email-alert'        # main receiver
+  routes:
+    - receiver: 'web.hook'       # secondary route example
 
 receivers:
   - name: 'email-alert'
     email_configs:
       - to: 'jordan@gmail.com'                  # where you want to receive alerts
-        from: 'jordan@gmail.com'                # sender (your same Gmail)
+        from: 'jordan@gmail.com'                # sender
         smarthost: 'smtp.gmail.com:587'         # Gmail SMTP server
         auth_username: 'jordan@gmail.com'       # your Gmail login
         auth_identity: 'jordan@gmail.com'       # same as username
-        auth_password: 'YOUR_APP_PASSWORD_HERE' # ⚠️ use Gmail app password
+        auth_password: '23367**7Ujh'            # ⚠️ Gmail App Password (not real password!)
+
+  - name: 'web.hook'
+    webhook_configs:
+      - url: 'http://127.0.0.1:5001/'
+
+inhibit_rules:
+  - source_match:
+      severity: 'critical'
+    target_match:
+      severity: 'warning'
+    equal: ['alertname', 'dev', 'instance']
+
+
 
 
 ```
