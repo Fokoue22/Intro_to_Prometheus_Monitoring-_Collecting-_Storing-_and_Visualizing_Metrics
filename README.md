@@ -743,7 +743,7 @@ groups:
 ```
 #### Press CTRL + O → Enter (to save) and Press CTRL + X (to exit the editor)
 
-### We need to kill the Prometheus Server and restart the process because it keep seeing two jobs. 
+### We need to kill the Prometheus Server and restart the process
 - Check Prometheus before
 ```
  ps -ef | grep prometheus
@@ -764,7 +764,7 @@ groups:
  ps -ef | grep prometheus
 ```
 ![Alt text](images/kill-the-Prometheus-alertmanager.png)
-![Alt text](images/new-job-node-exporter.png)
+![Alt text](images/view-alert-in-prometheus.png)
 
 
 
