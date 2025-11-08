@@ -442,6 +442,7 @@ sudo su - ubuntu
 ### Open Grafana Port (3000)
 1. Go to your AWS EC2 Management Console → `Security Groups` →
 Edit Inbound rules and add: default on port `3000` 
+
 ![Alt text](images/updated-SG-grafana.png)
 
 2. To be able to see the web url go to port `3000` by default using your `public ip address of your grafana ubuntu server`.
@@ -472,6 +473,7 @@ If Prometheus is working on the same EC2 instance as grafana use this one:
 http://localhost:9090
 ```
 5. Scroll down click Save & Test
+
 ![Alt text](images/Link-Grafana-to-Prometheus.png)
 
 ### Create Your First Dashboard
@@ -666,6 +668,61 @@ cat alertmanager.yml
  ps -ef | grep alertmanager
 ```
 
+### Link Alertmanager with Prometheus server
+- Edit your Prometheus config file `(prometheus.yml)`:
+```
+sudo su - ubuntu
+```
+```
+sudo -i
+```
+```
+cd prometheus-server
+```
+```
+cd prometheus
+```
+```
+vi prometheus.yml
+```
+```
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets:
+            - "localhost:9093"
+
+```
+```
+cat prometheus.yml
+```
+#### When you run the vi command above first thing to do is to press the "i" for insert. After deleting and pasting the pub-key you press the botton "Esc" ":wq!"
+#### NB: Make sure to update the port `9100`
+
+![Alt text](images/connect-prometheus&node-exporter.png)
+
+### We need to kill the Prometheus Server and restart the process because it keep seeing one job. 
+- Check Prometheus before
+```
+ ps -ef | grep prometheus
+```
+- Use the command below to kill the Prometheus Server
+```
+ kill -9 1349
+```
+```
+ ps -ef | grep prometheus
+```
+- Let RUN PROMETHEUS IN THE BACKGROUND again 
+```
+ nohup ./prometheus > prometheus.log 2>&1 &
+```
+- CHECK status after
+```
+ ps -ef | grep prometheus
+```
+![Alt text](images/kill-the-Prometheus.png)
+![Alt text](images/new-job-node-exporter.png)
 
 
 
