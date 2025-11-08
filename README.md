@@ -541,16 +541,16 @@ To fix the issue of every time we exit the server goes down, we can run the Prom
 ### Alertmanager?
 `Alertmanager`: handles alerts sent by Prometheus — it groups, routes, and sends them (e.g. by email, Slack, etc.).
 
-1. Take up you privilage on your target-host. 
+1. Take up you privilage on your Alertmanager server. 
 ```
 sudo su - ubuntu
 ```
 2. let rename our ubuntu server to "prometheuse". You can as well use the other command 
 ```
-sudo hostname target-host
+sudo hostname alertmanager
 ```
 ```
-sudo hostnamectl set-hostname target-host
+sudo hostnamectl set-hostname alertmanager
 ```
 3. For the command to take effect you need to exit(with the command bellow) and login again(with the fist command above)
 ```
@@ -571,24 +571,24 @@ mkdir downloads
 ```
 cd downloads
 ```
-- You use the command below to download prometheus `node exporters` in that folder just created
+- You use the command below to download prometheus `alertmanager` in that folder just created
 ```
-wget https://github.com/prometheus/node_exporter/releases/download/v1.10.2/node_exporter-1.10.2.linux-amd64.tar.gz
+wget https://github.com/prometheus/alertmanager/releases/download/v0.29.0/alertmanager-0.29.0.linux-amd64.tar.gz
 ```
 ```
 ls -l
 ```
 ![Alt text](images/download-node-exporter.png)
 
-6. We will still create another folder called `node-exporters` just because we want our work to be organized. 
+6. We will still create another folder called `alert-manager` just because we want our work to be organized. 
 ```
 cd ..
 ```
 ```
-mkdir node-exporters
+mkdir alert-manager
 ```
 ```
-cd node-exporters
+cd alert-manager
 ```
 7. Now let `unzip` it. We can first use the command help to see which command to use. `x = extract`, `f = the file you will like to extract`, `v = verbel in case of error message wil let you know` `z = for zip file`
 ```
@@ -597,23 +597,23 @@ tar -xvzf ~/downloads/node_exporter-1.10.2.linux-amd64.tar.gz
 ```
 ls -l
 ```
-9. Let rename our download prometheus `node_exporter-1.10.2.linux-amd64` into a simple name called `node_exporter`
+9. Let rename our download prometheus `node_exporter-1.10.2.linux-amd64` into a simple name called `alert_manager`
 ```
-mv node_exporter-1.10.2.linux-amd64 node_exporter
+mv node_exporter-1.10.2.linux-amd64 alert_manager
 ```
 ```
 ls -l
 ```
-10. let call the binary file `node-exporter` found inside our prometheus unzip file and check if node-exporter is install 
+10. let call the binary file `alert_manager` found inside our prometheus unzip file and check if node-exporter is install 
 ```
-cd node_exporter
+cd alert_manager
 ```
 ```
-./node_exporter --version
+./alert_manager --version
 ```
 11. Run node-exporter Binary with the command below 
 ```
-./node_exporter
+./alert_manager
 ```
 ![Alt text](images/Run-node-exporter.png)
 
