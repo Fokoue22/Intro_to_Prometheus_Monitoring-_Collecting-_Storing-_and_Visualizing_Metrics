@@ -218,10 +218,6 @@ To fix the issue of every time we exit the server goes down, we can run the Prom
 ### Node Exporters?
 `Exporters`: It's and `agents` that you install on the target system (EC2 instance) that is responsible of exposing the metrics (e.g., node_exporter for system metrics, app-specific exporters).
 
-So you need to install `node exporters` on the `target-host` it could be on `ubuntu, linux, Red Hat or whatever ec2 instance` for him to be able to expose the metrics.
-
-#### Does Ansible require and Agent to work??? No, because Ansible is agentless but Prometheus is not agentless because he need the Node Exporters agent to be install on the machine. 
-
 1. Take up you privilage on your target-host. 
 ```
 sudo su - ubuntu
@@ -542,12 +538,8 @@ To fix the issue of every time we exit the server goes down, we can run the Prom
 ![Alt text](images/Prometheus-on-the-bacground.png)
 
  
-### Node Exporters?
-`Exporters`: It's and `agents` that you install on the target system (EC2 instance) that is responsible of exposing the metrics (e.g., node_exporter for system metrics, app-specific exporters).
-
-So you need to install `node exporters` on the `target-host` it could be on `ubuntu, linux, Red Hat or whatever ec2 instance` for him to be able to expose the metrics.
-
-#### Does Ansible require and Agent to work??? No, because Ansible is agentless but Prometheus is not agentless because he need the Node Exporters agent to be install on the machine. 
+### Alertmanager?
+`Alertmanager`: handles alerts sent by Prometheus — it groups, routes, and sends them (e.g. by email, Slack, etc.).
 
 1. Take up you privilage on your target-host. 
 ```
