@@ -644,7 +644,7 @@ To fix the issue of every time we exit the server goes down, we can run the Prom
 ```
  ps -ef | grep alertmanager
 ```
-![Alt text](images/Prometheus-on-the-bacground.png)
+![Alt text](images/Alertmanager-on-the-bacground.png)
 
 
 
