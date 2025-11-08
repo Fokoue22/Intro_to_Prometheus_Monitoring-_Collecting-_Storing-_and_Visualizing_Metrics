@@ -624,7 +624,7 @@ cd alert_manager
 ```
 Public IPv4 address:9093
 ```
-![Alt text](images/updated-SG-alertmanger..png)
+![Alt text](images/alertmanager-dashboard.png)
 
 
 
