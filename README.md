@@ -494,6 +494,153 @@ rate(node_cpu_seconds_total{mode="system"}[5m])
 7. Save the dashboard.
 ![Alt text](images/create-first-dashboard-grafana.png)
 
+### Step 2 — Run Prometheus Server.
+1. To run the prometheus server just tap the command below 
+```
+./prometheus
+```
+![Alt text](images/run-prometheus.png)
+
+2. To be able to see the web url go to port `9090` by default using your `public ip address of your ubuntu server`.
+```
+3.93.61.153:9090
+```
+![Alt text](images/website-donot-work.png)
+
+3. But the prometheus don't show on our website. This is because we did not allow port `9090` on our `security group`\
+![Alt text](images/updated-SG-inbound.png)
+
+4. let go back to our website and refreh
+![Alt text](images/website-okay.png)
+
+
+### What Is the Prometheus Config File?
+The `Prometheus configuration file (named prometheus.yml)` is a yaml file that describe how you will like to collect and process your metrics. Can also be defined as the main configuration file that tells Prometheus what to monitor, how to scrape data, and where to send alerts. 
+- let cat into our config file 
+```
+cat prometheus.yml
+```
+
+### Run Prometheus in the background 
+To fix the issue of every time we exit the server goes down, we can run the Prometheus process in the background. If you run that Prometheus server in the background, It means if we leave the Linux page Prometheus server will still be running. That is just more efficient way of having it  
+- let check the process first. the ommand below will give you all the process that are runing on linux. 
+```
+ ps
+```
+- Check Prometheus before
+```
+ ps -ef | grep prometheus
+```
+- RUN PROMETHEUS IN THE BACKGROUND. `nohup` will help you run Prometheus on the bacground and if something failed generate the log in that location 
+```
+ nohup ./prometheus > prometheus.log 2>&1 &
+```
+- CHECK status after
+```
+ ps -ef | grep prometheus
+```
+![Alt text](images/Prometheus-on-the-bacground.png)
+
+ 
+### Node Exporters?
+`Exporters`: It's and `agents` that you install on the target system (EC2 instance) that is responsible of exposing the metrics (e.g., node_exporter for system metrics, app-specific exporters).
+
+So you need to install `node exporters` on the `target-host` it could be on `ubuntu, linux, Red Hat or whatever ec2 instance` for him to be able to expose the metrics.
+
+#### Does Ansible require and Agent to work??? No, because Ansible is agentless but Prometheus is not agentless because he need the Node Exporters agent to be install on the machine. 
+
+1. Take up you privilage on your target-host. 
+```
+sudo su - ubuntu
+```
+2. let rename our ubuntu server to "prometheuse". You can as well use the other command 
+```
+sudo hostname target-host
+```
+```
+sudo hostnamectl set-hostname target-host
+```
+3. For the command to take effect you need to exit(with the command bellow) and login again(with the fist command above)
+```
+exit
+```
+```
+sudo su - ubuntu
+```
+4. Now, let connect as a sudo (the root user) with the command below 
+```
+ sudo -i
+```
+5. We need to go to the officail documentation [this page](https://prometheus.io/download/) we copy the link on `Linux OS`. 
+- Before that we need to create a folder called `downloads` then you cd into it
+```
+mkdir downloads
+```
+```
+cd downloads
+```
+- You use the command below to download prometheus `node exporters` in that folder just created
+```
+wget https://github.com/prometheus/node_exporter/releases/download/v1.10.2/node_exporter-1.10.2.linux-amd64.tar.gz
+```
+```
+ls -l
+```
+![Alt text](images/download-node-exporter.png)
+
+6. We will still create another folder called `node-exporters` just because we want our work to be organized. 
+```
+cd ..
+```
+```
+mkdir node-exporters
+```
+```
+cd node-exporters
+```
+7. Now let `unzip` it. We can first use the command help to see which command to use. `x = extract`, `f = the file you will like to extract`, `v = verbel in case of error message wil let you know` `z = for zip file`
+```
+tar -xvzf ~/downloads/node_exporter-1.10.2.linux-amd64.tar.gz
+```
+```
+ls -l
+```
+9. Let rename our download prometheus `node_exporter-1.10.2.linux-amd64` into a simple name called `node_exporter`
+```
+mv node_exporter-1.10.2.linux-amd64 node_exporter
+```
+```
+ls -l
+```
+10. let call the binary file `node-exporter` found inside our prometheus unzip file and check if node-exporter is install 
+```
+cd node_exporter
+```
+```
+./node_exporter --version
+```
+11. Run node-exporter Binary with the command below 
+```
+./node_exporter
+```
+![Alt text](images/Run-node-exporter.png)
+
+12. Node-exporter run by default on port `9100` So will need to update our `security group Inbound Rule ` agian. 
+![Alt text](images/updated-SG-node-exporter.png)
+
+13. To be able to see the web url go to port `9100` by default using your `public ip address of your target-host ubuntu server`.
+```
+Public IPv4 address:9100
+```
+!
+
+
+
+
+
+
+
+
 ### You can also install `Alertmanager` on a separete EC2 and link that with `prometheus server` using the Prometheus configuration file (prometheus.yml) and many more 
 
 ## Author
