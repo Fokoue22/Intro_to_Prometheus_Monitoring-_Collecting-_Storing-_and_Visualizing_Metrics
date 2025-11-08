@@ -488,56 +488,11 @@ rate(node_cpu_seconds_total{mode="system"}[5m])
 ```
 6. Click Run query
 7. Save the dashboard.
+
 ![Alt text](images/create-first-dashboard-grafana.png)
 
-### Step 2 — Run Prometheus Server.
-1. To run the prometheus server just tap the command below 
-```
-./prometheus
-```
-![Alt text](images/run-prometheus.png)
-
-2. To be able to see the web url go to port `9090` by default using your `public ip address of your ubuntu server`.
-```
-3.93.61.153:9090
-```
-![Alt text](images/website-donot-work.png)
-
-3. But the prometheus don't show on our website. This is because we did not allow port `9090` on our `security group`\
-![Alt text](images/updated-SG-inbound.png)
-
-4. let go back to our website and refreh
-![Alt text](images/website-okay.png)
 
 
-### What Is the Prometheus Config File?
-The `Prometheus configuration file (named prometheus.yml)` is a yaml file that describe how you will like to collect and process your metrics. Can also be defined as the main configuration file that tells Prometheus what to monitor, how to scrape data, and where to send alerts. 
-- let cat into our config file 
-```
-cat prometheus.yml
-```
-
-### Run Prometheus in the background 
-To fix the issue of every time we exit the server goes down, we can run the Prometheus process in the background. If you run that Prometheus server in the background, It means if we leave the Linux page Prometheus server will still be running. That is just more efficient way of having it  
-- let check the process first. the ommand below will give you all the process that are runing on linux. 
-```
- ps
-```
-- Check Prometheus before
-```
- ps -ef | grep prometheus
-```
-- RUN PROMETHEUS IN THE BACKGROUND. `nohup` will help you run Prometheus on the bacground and if something failed generate the log in that location 
-```
- nohup ./prometheus > prometheus.log 2>&1 &
-```
-- CHECK status after
-```
- ps -ef | grep prometheus
-```
-![Alt text](images/Prometheus-on-the-bacground.png)
-
- 
 ### Alertmanager?
 `Alertmanager`: handles alerts sent by Prometheus — it groups, routes, and sends them (e.g. by email, Slack, etc.).
 
@@ -684,10 +639,6 @@ inhibit_rules:
     target_match:
       severity: 'warning'
     equal: ['alertname', 'dev', 'instance']
-
-
-
-
 ```
 ```
 cat alertmanager.yml
@@ -714,8 +665,6 @@ cat alertmanager.yml
 ```
  ps -ef | grep alertmanager
 ```
-![Alt text](images/kill-the-Prometheus.png)
-![Alt text](images/new-job-node-exporter.png)
 
 
 
