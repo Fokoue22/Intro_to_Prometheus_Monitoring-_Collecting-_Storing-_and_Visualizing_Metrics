@@ -386,7 +386,7 @@ cat prometheus.yml
  node_cpu_seconds_total
 ```
 
-## Install Grafana Official Repository. 
+## Step 7 — Install Grafana Official Repository. 
 ### Complete the following steps to install Grafana from the APT repository:
 1. Take up you privilage on your target-host. 
 ```
@@ -478,7 +478,7 @@ You’ll be asked to create a new password — so do that or skip
 ![Alt text](images/grafana-dashboard.png)
 
 
-### Link Grafana to Prometheus. 
+### Step 8 — Link Grafana to Prometheus. 
 Once you’re in Grafana’s dashboard:
 1. Click on → `Data Sources`
 2. Click Add data source
@@ -495,7 +495,7 @@ http://localhost:9090
 
 ![Alt text](images/Link-Grafana-to-Prometheus.png)
 
-### Create Your First Dashboard
+### Step 9 — Create Your First Dashboard
 1. First click on `Dashboard` at your left 
 2. Then click the `+ create dashboard`
 3. Click Add new panel
@@ -514,7 +514,7 @@ rate(node_cpu_seconds_total{mode="system"}[5m])
 
 
 
-### Alertmanager?
+### Step 10 — Alertmanager?
 `Alertmanager`: handles alerts sent by Prometheus — it groups, routes, and sends them (e.g. by email, Slack, etc.).
 
 1. Take up you privilage on your Alertmanager server. 
