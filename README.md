@@ -602,7 +602,7 @@ Public IPv4 address:9093
 ```
 ![Alt text](images/alertmanager-dashboard.png)
 
-### Run Alertmanager in the background 
+### Step 11 — Run Alertmanager in the background 
 To fix the issue of every time we exit the server goes down, we can run the Prometheus process in the background.   
 - let check the process first. the command below will give you all the process that are runing on linux. 
 ```
@@ -622,7 +622,7 @@ To fix the issue of every time we exit the server goes down, we can run the Prom
 ```
 ![Alt text](images/Alertmanager-on-the-bacground.png)
 
-### Configure Alertmanager 
+### Step 12 — Configure Alertmanager 
 - So, we need to be in our Alertmanager ec2 instance and go to our `Alertmanager configuration file (alertmanager.yml)` and add a global for the receiver. 
 ```
 vi alertmanager.yml
@@ -666,7 +666,7 @@ cat alertmanager.yml
 ```
 ![Alt text](images/alermanager-configuration-file.png)
 
-### We need to kill the Alertmanager to make our change  
+### Step 13 — We need to kill the Alertmanager to make our change  
 - Check Prometheus before
 ```
  ps -ef | grep alertmanager
