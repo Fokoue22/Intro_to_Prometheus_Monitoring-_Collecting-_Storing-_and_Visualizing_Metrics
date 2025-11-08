@@ -649,7 +649,7 @@ To fix the issue of every time we exit the server goes down, we can run the Prom
 ### Configure Alertmanager 
 - So, we need to be in our Alertmanager ec2 instance and go to our `Alertmanager configuration file (alertmanager.yml)` and add a global for the receiver. 
 ```
-vi prometheus.yml
+vi alertmanager.yml
 ```
 ```
 global:
@@ -671,29 +671,29 @@ receivers:
 
 ```
 ```
-cat prometheus.yml
+cat alertmanager.yml
 ```
 ![Alt text](images/alermanager-configuration-file.png)
 
-### We need to kill the Prometheus Server and restart the process because it keep seeing one job. 
+### We need to kill the Alertmanager to make our change  
 - Check Prometheus before
 ```
- ps -ef | grep prometheus
+ ps -ef | grep alertmanager
 ```
 - Use the command below to kill the Prometheus Server
 ```
  kill -9 1349
 ```
 ```
- ps -ef | grep prometheus
+ ps -ef | grep alertmanager
 ```
 - Let RUN PROMETHEUS IN THE BACKGROUND again 
 ```
- nohup ./prometheus > prometheus.log 2>&1 &
+ nohup ./alertmanager > alertmanager.log 2>&1 &
 ```
 - CHECK status after
 ```
- ps -ef | grep prometheus
+ ps -ef | grep alertmanager
 ```
 ![Alt text](images/kill-the-Prometheus.png)
 ![Alt text](images/new-job-node-exporter.png)
