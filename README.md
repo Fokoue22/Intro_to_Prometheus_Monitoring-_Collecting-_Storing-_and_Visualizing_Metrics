@@ -707,7 +707,23 @@ cat prometheus.yml
 ![Alt text](images/connect-prometheus&alertmanager.png)
 
 - Then create alert.rules.yml and add a simple alert rule
-
+```
+sudo nano alert.rules.yml
+```
+```
+groups:
+- name: ExampleAlerts
+  rules:
+  - alert: HighCPUUsage
+    expr: process_cpu_seconds_total > 0.5
+    for: 1m
+    labels:
+      severity: critical
+    annotations:
+      summary: "High CPU usage detected"
+      description: "The CPU usage is above 50% for more than 1 minute."
+```
+#### Press CTRL + O → Enter (to save) and Press CTRL + X (to exit the editor)
 
 ### We need to kill the Prometheus Server and restart the process because it keep seeing one job. 
 - Check Prometheus before
