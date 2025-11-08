@@ -687,7 +687,7 @@ cat alertmanager.yml
  ps -ef | grep alertmanager
 ```
 
-### Link Alertmanager with Prometheus server
+### Step 14 — Link Alertmanager with Prometheus server
 - Edit your Prometheus config file `(prometheus.yml)`:
 ```
 sudo su - ubuntu
@@ -744,7 +744,7 @@ groups:
 ```
 #### Press CTRL + O → Enter (to save) and Press CTRL + X (to exit the editor)
 
-### We need to kill the Prometheus Server and restart the process
+### Step 15 — We need to kill the Prometheus Server and restart the process
 - Check Prometheus before
 ```
  ps -ef | grep prometheus
