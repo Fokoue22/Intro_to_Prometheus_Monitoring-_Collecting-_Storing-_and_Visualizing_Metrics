@@ -620,11 +620,11 @@ cd alert_manager
 12. Node-exporter run by default on port `9093` So will need to update our `security group Inbound Rule ` agian. 
 ![Alt text](images/updated-SG-alertmanger..png)
 
-13. To be able to see the web url go to port `9100` by default using your `public ip address of your target-host ubuntu server`.
+13. To be able to see the web url go to port `9093` by default using your `public ip address of your target-host ubuntu server`.
 ```
-Public IPv4 address:9100
+Public IPv4 address:9093
 ```
-!
+![Alt text](images/updated-SG-alertmanger..png)
 
 
 
