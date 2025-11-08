@@ -599,7 +599,7 @@ ls -l
 ```
 9. Let rename our download prometheus `node_exporter-1.10.2.linux-amd64` into a simple name called `alert_manager`
 ```
-mv node_exporter-1.10.2.linux-amd64 alert_manager
+mv alertmanager-0.29.0.linux-amd64.tar.gz alert_manager
 ```
 ```
 ls -l
