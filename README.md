@@ -195,7 +195,7 @@ The `Prometheus configuration file (named prometheus.yml)` is a yaml file that d
 cat prometheus.yml
 ```
 
-### Run Prometheus in the background 
+### Step 3 — Run Prometheus in the background 
 To fix the issue of every time we exit the server goes down, we can run the Prometheus process in the background. If you run that Prometheus server in the background, It means if we leave the Linux page Prometheus server will still be running. That is just more efficient way of having it  
 - let check the process first. the ommand below will give you all the process that are runing on linux. 
 ```
@@ -216,7 +216,7 @@ To fix the issue of every time we exit the server goes down, we can run the Prom
 ![Alt text](images/Prometheus-on-the-bacground.png)
 
  
-### Node Exporters?
+### Step 4 — Node Exporters?
 `Exporters`: It's and `agents` that you install on the target system (EC2 instance) that is responsible of exposing the metrics (e.g., node_exporter for system metrics, app-specific exporters).
 
 1. Take up you privilage on your target-host. 
