@@ -646,7 +646,57 @@ To fix the issue of every time we exit the server goes down, we can run the Prom
 ```
 ![Alt text](images/Alertmanager-on-the-bacground.png)
 
+### Configure Alertmanager 
+- So, we need to be in our Alertmanager ec2 instance and go to our `Alertmanager configuration file (alertmanager.yml)` and add a global for the receiver. 
+```
+vi prometheus.yml
+```
+```
+global:
+  resolve_timeout: 5m
 
+route:
+  receiver: 'email-alert'
+
+receivers:
+  - name: 'email-alert'
+    email_configs:
+      - to: 'jordan@gmail.com'                  # where you want to receive alerts
+        from: 'jordan@gmail.com'                # sender (your same Gmail)
+        smarthost: 'smtp.gmail.com:587'         # Gmail SMTP server
+        auth_username: 'jordan@gmail.com'       # your Gmail login
+        auth_identity: 'jordan@gmail.com'       # same as username
+        auth_password: 'YOUR_APP_PASSWORD_HERE' # ⚠️ use Gmail app password
+
+
+```
+```
+cat prometheus.yml
+```
+![Alt text](images/alermanager-configuration-file.png)
+
+### We need to kill the Prometheus Server and restart the process because it keep seeing one job. 
+- Check Prometheus before
+```
+ ps -ef | grep prometheus
+```
+- Use the command below to kill the Prometheus Server
+```
+ kill -9 1349
+```
+```
+ ps -ef | grep prometheus
+```
+- Let RUN PROMETHEUS IN THE BACKGROUND again 
+```
+ nohup ./prometheus > prometheus.log 2>&1 &
+```
+- CHECK status after
+```
+ ps -ef | grep prometheus
+```
+![Alt text](images/kill-the-Prometheus.png)
+![Alt text](images/new-job-node-exporter.png)
 
 
 
