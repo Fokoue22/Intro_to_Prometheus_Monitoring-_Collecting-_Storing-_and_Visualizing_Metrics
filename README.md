@@ -763,12 +763,12 @@ groups:
 ```
  ps -ef | grep prometheus
 ```
+
 ![Alt text](images/kill-the-Prometheus-alertmanager.png)
 ![Alt text](images/view-alert-in-prometheus.png)
 
 
 
-### You can also install `Alertmanager` on a separete EC2 and link that with `prometheus server` using the Prometheus configuration file (prometheus.yml) and many more 
 
 ## Author
 FOKOUE THOMAS
