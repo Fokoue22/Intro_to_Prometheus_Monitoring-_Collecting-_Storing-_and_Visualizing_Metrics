@@ -322,7 +322,7 @@ Public IPv4 address:9100
  ps -ef | grep node_exporter
 ```
 
-### We setup the Node Exporter but he's not yet link with our Prometheus Server. 
+### Step 4 — We setup the Node Exporter but he's not yet link with our Prometheus Server. 
 - So, we need to be in our Prometheus Server and go to our `Prometheus configuration file (prometheus.yml)` and create a new job called `node_exporter` our target on `scrape_configs` right at the bottom.
 ```
 sudo su - ubuntu
@@ -357,7 +357,7 @@ cat prometheus.yml
 #### NB: Make sure to update the port `9100`
 ![Alt text](images/connect-prometheus&node-exporter.png)
 
-### We need to kill the Prometheus Server and restart the process because it keep seeing one job. 
+### Step 5 —  We need to kill the Prometheus Server and restart the process because it keep seeing one job. 
 - Check Prometheus before
 ```
  ps -ef | grep prometheus
@@ -380,7 +380,7 @@ cat prometheus.yml
 ![Alt text](images/kill-the-Prometheus.png)
 ![Alt text](images/new-job-node-exporter.png)
 
-### Now the `target host or system` is exposing all his matrics for the `prometheus server` to monitor it. So, when something happend you will just get the metrics and start visualising it from the prometheus server you can check all the metrics that are available. 
+### Step 6 —  Now the `target host or system` is exposing all his matrics for the `prometheus server` to monitor it. So, when something happend you will just get the metrics and start visualising it from the prometheus server you can check all the metrics that are available. 
 - Like the metrics below to check the cpu 
 ```
  node_cpu_seconds_total
